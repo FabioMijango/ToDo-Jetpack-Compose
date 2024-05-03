@@ -72,7 +72,9 @@ fun MainScreen() {
             modifier = Modifier.padding(10.dp)
         )
 
-        LazyColumn {
+        LazyColumn (
+            userScrollEnabled = true,
+        ){
             itemsIndexed(_toDoList.value) { index, _ ->
                 Tasks(index, _toDoList = _toDoList)
             }
